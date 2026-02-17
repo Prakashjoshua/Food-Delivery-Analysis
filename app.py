@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import mysql.connector
 
-# -------------------------
-# Database Connection
-# -------------------------
 def get_connection():
     return mysql.connector.connect(
         host="localhost",
@@ -21,10 +18,6 @@ def run_query(query):
 
 st.set_page_config(page_title="Online Food Delivery Analysis", layout="wide")
 st.title("🍔 Online Food Delivery - 15 Analytical Tasks")
-
-# -------------------------
-# TASKS
-# -------------------------
 
 tasks = {
     "1. Top Spending Customers": """
@@ -157,10 +150,6 @@ tasks = {
         LIMIT 10;
     """
 }
-
-# -------------------------
-# CLICK → SHOW QUERY + OUTPUT
-# -------------------------
 
 selected_task = st.selectbox("Select a Question", list(tasks.keys()))
 
